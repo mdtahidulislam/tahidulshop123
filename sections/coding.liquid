@@ -1,0 +1,77 @@
+<div>
+    <h1>Lesson-1: Variables</h1>
+    <!-- assign -->
+    {% assign shopname = shop.name %}
+    {{ shopname }} <br>
+
+    <!-- capture 
+    -cant take any object
+    -can use assign variable
+    -returns string
+-->
+    {% capture myshop %} <i>hello {{ shopname }}</i> {% endcapture %}
+    {{ myshop }} <br>
+
+    <!-- increment -->
+    <ul>
+        <li>list item - {% increment conter %}</li>
+        <li>list item - {% increment conter %}</li>
+        <li>list item - {% increment conter %}</li>
+        <li>list item - {% increment conter %}</li>
+        <li>list item - {% increment conter %}</li>
+    </ul>
+
+    <!-- decrement -->
+    {% decrement counter %} <br>
+    {% decrement counter %} <br>
+    {% decrement counter %} <br>
+
+    <h1>Lesson-2: Data types</h1>
+    <h3>1.string</h3>
+    {% assign text = 'single qouted string' %}
+    {{ text }} <br>
+    {% assign text2 = 'double qouted string' %}
+    {{ text2 }} <br>
+
+    <h3>2.Number: Intiger & floats</h3>
+    {% assign intNum = 32 %}
+    {{ intNum }} <br>
+    {% assign floatNum = 43.56 %}
+    {{ floatNum }} <br>
+
+    <h3>3.Boolean: true or false</h3>
+    {% assign foo = true %}
+    {{ foo }} <br>
+    {% assign bar = false %}
+    {{ bar }} <br>
+
+    <h3>4.Nil - absence of value (not print anything to the page)</h3>
+    {% assign trackNum = fulfillment.tracking_numbers %}
+    Tracking Number: {{ trackNum }} <br>
+
+    {% if fulfillment.tracking_numbers == nil %}
+    Tracking Number:
+    {% endif %} <br>
+
+    <h3>5.Array</h3>
+    {%- comment -%}
+    {% assign myArray = ['ami', 'tumi', 'se'] %} - creats an error
+    - all values keep in single/double qoute & use split filter
+    - looping through array
+    {%- endcomment -%}
+    {% assign myArray = 'ami, tumi, se' | split: ',' %}
+    {{ myArray[0]}} <br>
+    {{ myArray[1]}} <br>
+    {{ myArray[2]}} <br>
+
+
+
+
+
+
+</div>
+{% schema %}
+{
+
+}
+{% endschema %}
