@@ -54,11 +54,7 @@
     {% endif %} <br>
 
     <h3>5.Array</h3>
-    {%- comment -%}
-    {% assign myArray = ['ami', 'tumi', 'se'] %} - creats an error
-    - all values keep in single/double qoute & use split filter
-    - looping through array
-    {%- endcomment -%}
+    
     {% assign myArray = 'ami, tumi, se' | split: ',' %}
     {{ myArray[0]}} <br>
     {{ myArray[1]}} <br>
